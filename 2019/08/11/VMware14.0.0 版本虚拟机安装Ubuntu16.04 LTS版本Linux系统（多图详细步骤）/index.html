@@ -130,7 +130,11 @@
 <meta property="og:image" content="https://img-my.csdn.net/uploads/201207/03/1341251001_3818.png">
 <meta property="og:image" content="https://www.ilanni.com/wp-content/uploads/2014/04/clip_image001.png">
 <meta property="og:image" content="https://www.ilanni.com/wp-content/uploads/2014/04/clip_image002_thumb.png">
-<meta property="og:updated_time" content="2019-08-11T13:21:34.379Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/8746907-68d795d039cca144.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/8746907-d3327a31385979a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/655/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/8746907-d42ff6008e6ffd29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/8746907-ab1dab05d1310470.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+<meta property="og:updated_time" content="2019-08-20T01:16:51.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="VMware14.0.0 版本虚拟机安装Ubuntu16.04 LTS版本Linux系统（多图详细步骤）一.前期准备工作1.成功安装完成VMware14软件； 2.去Ubuntu官网下载Ubuntu16.0.4 LTS 版本的镜像文件。 二.安装步骤1.打开VMware软件，选择《创建虚拟机》；  2.选择《自定义》，并点击《下一步》；  3.硬件兼容性选择《Workstation14.x》,并点">
@@ -567,6 +571,25 @@
 <p>2、在最后加上 nameserver 8.8.8.8</p>
 <p>3、保存退出</p>
 <h3 id="VM使用"><a href="#VM使用" class="headerlink" title="VM使用"></a>VM使用</h3><p> 最好在每一次大的改动后写入快照。</p>
+<h3 id="克隆"><a href="#克隆" class="headerlink" title="克隆"></a>克隆</h3><p>在我们现在的虚拟机上克隆出一个干净的初始完整虚拟机，以后备用。</p>
+<p>右键点击安装完的虚拟机 -&gt; 管理 -&gt; 克隆，按步骤操作即可。第三步建议创建完整克隆，如图。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/8746907-68d795d039cca144.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="img"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/8746907-d3327a31385979a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/655/format/webp" alt="img"></p>
+<p>克隆完成后，这个克隆机可以作为备份，防止以后又要重新安装干净的虚拟机。OK，我们可以再重新克隆一个来折腾。</p>
+<h4 id="修改克隆机配置"><a href="#修改克隆机配置" class="headerlink" title="修改克隆机配置"></a>修改克隆机配置</h4><p>需要修改的地方有如下两处：</p>
+<ul>
+<li>网络配置文件ifcfg-ens33的ip地址</li>
+<li>hostname主机名，不要跟源克隆机一致</li>
+</ul>
+<ol>
+<li>修改ifcfg-ens33，如图修改ip地址，递增1即可</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/8746907-d42ff6008e6ffd29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="img"></p>
+<p>2.修改主机名，配置文件为/etc/hostname，修改为你想要的主机名即可</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/8746907-ab1dab05d1310470.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="img"></p>
+<p><code>hostnamectl set-hostname 别名</code></p>
+<p>重启克隆机网络，并测试网络连通性，和与主机的连通性</p>
+<p><code>services network resart</code></p>
 
       
     </div>
@@ -723,7 +746,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -783,7 +806,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#VMware14-0-0-版本虚拟机安装Ubuntu16-04-LTS版本Linux系统（多图详细步骤）"><span class="nav-number">1.</span> <span class="nav-text">VMware14.0.0 版本虚拟机安装Ubuntu16.04 LTS版本Linux系统（多图详细步骤）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-前期准备工作"><span class="nav-number">1.1.</span> <span class="nav-text">一.前期准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-安装步骤"><span class="nav-number">1.2.</span> <span class="nav-text">二.安装步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、配置网络"><span class="nav-number">1.3.</span> <span class="nav-text">三、配置网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装时出现的问题"><span class="nav-number">1.4.</span> <span class="nav-text">安装时出现的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VM使用"><span class="nav-number">1.5.</span> <span class="nav-text">VM使用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#VMware14-0-0-版本虚拟机安装Ubuntu16-04-LTS版本Linux系统（多图详细步骤）"><span class="nav-number">1.</span> <span class="nav-text">VMware14.0.0 版本虚拟机安装Ubuntu16.04 LTS版本Linux系统（多图详细步骤）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-前期准备工作"><span class="nav-number">1.1.</span> <span class="nav-text">一.前期准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-安装步骤"><span class="nav-number">1.2.</span> <span class="nav-text">二.安装步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、配置网络"><span class="nav-number">1.3.</span> <span class="nav-text">三、配置网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装时出现的问题"><span class="nav-number">1.4.</span> <span class="nav-text">安装时出现的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VM使用"><span class="nav-number">1.5.</span> <span class="nav-text">VM使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#克隆"><span class="nav-number">1.6.</span> <span class="nav-text">克隆</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改克隆机配置"><span class="nav-number">1.6.1.</span> <span class="nav-text">修改克隆机配置</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
